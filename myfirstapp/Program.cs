@@ -141,6 +141,7 @@
                         Console.Write(" ");
                     }
                 }
+                Console.Write("+");
                 Console.WriteLine();
             }
         }
