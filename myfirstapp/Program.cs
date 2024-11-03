@@ -77,10 +77,9 @@
                 Console.Write('+');
             }
             Console.WriteLine();
-            
         }
 
-        public static void ChessDeck(int wight, int height)
+        /*public static void ChessDeck(int wight, int height)
         {
             string crosses = "";
             int i = 0;
@@ -123,6 +122,27 @@
                 Console.WriteLine();
             }
 
+        }*/
+        
+        public static void ChessDeck(int width, int height)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                Console.Write("+");
+
+                for (int k = 0; k < width; k++)
+                {
+                    if ((j + k) % 2 == 0)
+                    {
+                        Console.Write("+");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
         }
 
         public static void BigCross(int wight)
