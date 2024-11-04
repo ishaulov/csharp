@@ -36,8 +36,11 @@
 			{
 				Console.Write("Enter a random text: ");
 				s = Console.ReadLine();
-
-				if (string.IsNullOrWhiteSpace(s))
+				if (string.IsNullOrEmpty(s))
+				{
+					Console.WriteLine("Error! This string is empty.");
+				}
+				else
 				{
 					break;
 				}
@@ -81,6 +84,7 @@
 					for (int j = 1; j <= wight; j++)
 					{
 						Console.Write(' ');
+						
 					}
 				}
 
