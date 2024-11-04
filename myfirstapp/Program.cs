@@ -1,179 +1,157 @@
 ﻿namespace myfirstapp
 {
-    internal class Program
-    {
-        public static void Main(string[] args)
-        {
-          WriteTable(6, "testtt");
+	internal class Program
+	{
+		public static void Main(string[] args)
+		{
+			int n;
 
-          /*
-          int inputNumber = int.Parse(Console.ReadLine());
-          string? inputString = Console.ReadLine();
+			while (true)
+			{
+				Console.Write("Enter a number between 1 and 6: ");
+				string input = Console.ReadLine();
 
-          WriteTable(inputNumber, inputString);
-          */
-        }
+				if (int.TryParse(input, out n))
+				{
+					if (n is < 1 or > 6)
+					{
+						Console.WriteLine("Warning! Enter a number between 1 and 6: ");
+					}
+					else
+					{
+						break;
+					}
+				}
+				else
+				{
+					Console.WriteLine("Error! This is not a number.");
+				}
+			}
 
-        private static void WriteTable(int n, string s)
-        {
-            if (n is < 1 or > 6)
-            {
-                Console.WriteLine("Enter the correct number:");
-                return;
-            }
+			Console.WriteLine($"You enter the number: {n}");
 
-            if (s.Equals(""))
-            {
-                Console.WriteLine("Enter the text:");
-                return;
-            }
+			string s;
 
-            int wight = s.Length + 2 * (n - 1);
-            int height = 2 * n - 1;
+			while (true)
+			{
+				Console.Write("Enter a random text: ");
+				s = Console.ReadLine();
 
-            if (wight > 40)
-            {
-                return;
-            }
+				if (string.IsNullOrWhiteSpace(s))
+				{
+					break;
+				}
+			}
 
-            CrossLine(wight);
-            
-            for (int i = 1; i <= 2 * n - 1; i++)
-            {
-                Console.Write('+');
-                if(i == n)
-                {
-                    for (int j = 1; j <= n - 1; j++)
-                    {
-                        Console.Write(' ');
-                    }
-                    Console.Write(s);
-                    for (int j = 1; j <= n - 1; j++)
-                    {
-                        Console.Write(' ');
-                    }
-                }
-                else
-                {
-                    for (int j = 1; j <= wight; j++)
-                    {
-                        Console.Write(' ');
-                    }
-                }
-                Console.Write('+');
-                Console.Write('\n');
-            }
-            CrossLine(wight);
-            ChessDeck(wight, height);
-            CrossLine(wight);
-            BigCross(wight);
-            CrossLine(wight);
-        }
-        
-        private static void CrossLine(int wight)
-        {
-            for (int i = 1; i <= wight + 2; i++)
-            {
-                Console.Write('+');
-            }
-            Console.WriteLine();
-        }
+			Console.WriteLine($"You enter the text: {s}");
 
-        /*public static void ChessDeck(int wight, int height)
-        {
-            string crosses = "";
-            int i = 0;
-            bool isCross = false;
-            for (int j = 0; j < height; j++)
-            {
-                Console.Write("+");
-                for (int k = 1; k <= wight; k++)
-                {
-                    if (j % 2 == 0)
-                    {
-                        if (isCross)
-                        {
-                            Console.Write('+');
-                            isCross = false;
-                        }
-                        else
-                        {
-                            Console.Write(' ');
-                            isCross = true;
-                        }
-                    }
-                    else
-                    {
-                        if (!isCross)
-                        {
-                            Console.Write('+');
-                            isCross = true;
-                        }
-                        else
-                        {
-                            Console.Write(' ');
-                            isCross = false;
-                        }
-                    }
-                    i++;
-                }
-                
-                Console.Write("+");
-                Console.WriteLine();
-            }
+			WriteTable(n, s);
+		}
 
-        }*/
-        
-        public static void ChessDeck(int width, int height)
-        {
-            for (int j = 0; j < height; j++)
-            {
-                Console.Write("+");
+		private static void WriteTable(int n, string s)
+		{
+			int wight = s.Length + 2 * (n - 1);
+			int height = 2 * n - 1;
 
-                for (int k = 0; k < width; k++)
-                {
-                    if ((j + k) % 2 == 0)
-                    {
-                        Console.Write("+");
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                    }
-                }
-                
-                Console.Write("+");
-                Console.WriteLine();
-            }
-        }
+			if (wight > 40)
+			{
+				return;
+			}
 
-        public static void BigCross(int wight)
-        {
-            for (int i = 0; i < wight; i++)
-            {
-                Console.Write("+");
-                for (int j = 0; j < wight; j++)
-                {
-                    if (j == i)
-                    {
-                        Console.Write('+');
-                    }
-                    else if (j == wight - i - 1)
-                    {
-                        Console.Write('+');
-                    }
-                    else
-                    {
-                        Console.Write(' ');
-                    }
-                }
-                Console.Write("+");
-                Console.WriteLine();
-            }
-        }
+			CrossLine(wight);
 
+			for (int i = 1; i <= 2 * n - 1; i++)
+			{
+				Console.Write('+');
+				if (i == n)
+				{
+					for (int j = 1; j <= n - 1; j++)
+					{
+						Console.Write(' ');
+					}
 
+					Console.Write(s);
+					for (int j = 1; j <= n - 1; j++)
+					{
+						Console.Write(' ');
+					}
+				}
+				else
+				{
+					for (int j = 1; j <= wight; j++)
+					{
+						Console.Write(' ');
+					}
+				}
 
-    }
+				Console.Write('+');
+				Console.Write('\n');
+			}
 
+			CrossLine(wight);
+			ChessDeck(wight, height);
+			CrossLine(wight);
+			BigCross(wight);
+			CrossLine(wight);
+		}
+
+		private static void CrossLine(int wight)
+		{
+			for (int i = 1; i <= wight + 2; i++)
+			{
+				Console.Write('+');
+			}
+
+			Console.WriteLine();
+		}
+
+		public static void ChessDeck(int width, int height)
+		{
+			for (int j = 0; j < height; j++)
+			{
+				Console.Write("+");
+
+				for (int k = 0; k < width; k++)
+				{
+					if ((j + k) % 2 == 0)
+					{
+						Console.Write("+");
+					}
+					else
+					{
+						Console.Write(" ");
+					}
+				}
+
+				Console.Write("+");
+				Console.WriteLine();
+			}
+		}
+
+		public static void BigCross(int wight)
+		{
+			for (int i = 0; i < wight; i++)
+			{
+				Console.Write("+");
+				for (int j = 0; j < wight; j++)
+				{
+					if (j == i)
+					{
+						Console.Write('+');
+					}
+					else if (j == wight - i - 1)
+					{
+						Console.Write('+');
+					}
+					else
+					{
+						Console.Write(' ');
+					}
+				}
+
+				Console.Write("+");
+				Console.WriteLine();
+			}
+		}
+	}
 }
