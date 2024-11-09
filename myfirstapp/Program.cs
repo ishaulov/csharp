@@ -7,9 +7,9 @@ namespace myfirstapp
 	{
 		static void Main(string[] args)
 		{
-			// listExample();
+			listExample();
 			
-			// arrayList();
+			arrayList();
 
 			LinkedList();
 		}
