@@ -28,17 +28,19 @@
 
 		public static int Discriminant(int a, int b, int c)
 		{
+			int d;
+			
 			try
 			{
-				int d = b * b - 4 * a * c;
-				return d;
+				d = checked(b * b - 4 * a * c);
 			}
-			catch (Exception e)
+			catch (Exception ex)
 			{
-				Console.WriteLine(e);
+				Console.WriteLine("Exception: \n" + ex);
+				return 0;
 			}
 
-			return 0;
+			return d;
 		}
 	}
 }
