@@ -7,14 +7,14 @@ namespace myfirstapp
 	{
 		static void Main(string[] args)
 		{
-			listExample();
+			ListExample();
 
-			arrayList();
+			ArrayList();
 
 			LinkedList();
 		}
 
-		public static void listExample()
+		public static void ListExample()
 		{
 			var rand = new Random();
 			var list = new List<int>();
@@ -47,7 +47,7 @@ namespace myfirstapp
 			Console.WriteLine($"Time for /777: {stopwatch.ElapsedMilliseconds} ms");
 		}
 
-		public static void arrayList()
+		public static void ArrayList()
 		{
 			var rand = new Random();
 			var arrList = new ArrayList();
