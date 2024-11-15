@@ -69,9 +69,10 @@
 					x1 = (-b + Math.Sqrt(d)) / 2 * a; 
 					result.Add(x1);
 				}
-				else if (d < 0)
+				else
 				{
-					return Exception ;
+					Console.BackgroundColor = ConsoleColor.Yellow;
+					throw new Exception("Вещественных значений не найдено") ;
 				}
 
 			}
