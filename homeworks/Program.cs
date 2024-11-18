@@ -32,17 +32,17 @@
 				{
 					Console.WriteLine("Введено некорректное значение \n" + ex);
 				}
-
-				d = Discriminant(a, b, c);
-				listWithX = XFinder(a, b, d);
-				if (listWithX.Count == 2)
-				{
-					Console.WriteLine($"x1 = {listWithX[0]}, x2 = {listWithX[1]}");
-				}
-				else if (listWithX.Count == 1)
-				{
-					Console.WriteLine($"x = {listWithX[0]}");
-				}
+			}
+			
+			d = Discriminant(a, b, c);
+			listWithX = XFinder(a, b, d);
+			if (listWithX.Count == 2)
+			{
+				Console.WriteLine($"x1 = {listWithX[0]}, x2 = {listWithX[1]}");
+			}
+			else if (listWithX.Count == 1)
+			{
+				Console.WriteLine($"x = {listWithX[0]}");
 			}
 		}
 
@@ -86,7 +86,7 @@
 				{
 					Console.BackgroundColor = ConsoleColor.Yellow;
 					Console.ForegroundColor = ConsoleColor.Black;
-					throw new Exclude("From the distances");
+					throw new Exclude("Вещественных значений не найдено");
 				}
 			}
 			catch (Exception e)
