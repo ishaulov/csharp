@@ -1,4 +1,4 @@
-﻿namespace myfirstapp
+﻿namespace homeworks
 {
 	internal class Program
 	{
@@ -71,7 +71,7 @@
 				}
 				else if (d < 0)
 				{
-					return Exception ;
+					/*return;*/
 				}
 
 			}
