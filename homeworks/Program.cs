@@ -1,4 +1,4 @@
-﻿namespace myfirstapp
+﻿namespace homeworks
 {
 	internal class Program
 	{
