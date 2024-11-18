@@ -5,45 +5,20 @@
 	{
 		public static void Main(string[] args)
 		{
-			int a = 0;
-			int b = 0;
-			int c = 0;
-			int d = 0;
-			List<double> listWithX = new List<double>();
-
-			while (true)
-			{
-				try
-				{
-					Console.WriteLine("Введите значение a: ");
-					a = int.Parse(Console.ReadLine());
-					
-					Console.WriteLine("Введите значение b: ");
-					b = int.Parse(Console.ReadLine());
-
-					Console.WriteLine("Введите значение c: ");
-					c = int.Parse(Console.ReadLine());
-					
-					break;
-				}
+			var arguments = new Quadratic();
+			arguments.SetArguments(args);
 
 
-				catch (Exception ex)
-				{
-					Console.WriteLine("Введено некорректное значение \n" + ex);
-				}
-			}
-			
-			d = Discriminant(a, b, c);
-			listWithX = XFinder(a, b, d);
-			if (listWithX.Count == 2)
-			{
-				Console.WriteLine($"x1 = {listWithX[0]}, x2 = {listWithX[1]}");
-			}
-			else if (listWithX.Count == 1)
-			{
-				Console.WriteLine($"x = {listWithX[0]}");
-			}
+			// d = Discriminant(a, b, c);
+			// listWithX = XFinder(a, b, d);
+			// if (listWithX.Count == 2)
+			// {
+			// 	Console.WriteLine($"x1 = {listWithX[0]}, x2 = {listWithX[1]}");
+			// }
+			// else if (listWithX.Count == 1)
+			// {
+			// 	Console.WriteLine($"x = {listWithX[0]}");
+			// }
 		}
 
 		public static int Discriminant(int a, int b, int c)
