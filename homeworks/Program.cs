@@ -1,4 +1,5 @@
 ﻿namespace homeworks
+
 {
 	internal class Program
 	{
@@ -9,6 +10,7 @@
 			int c = 0;
 			int d = 0;
 			List<double> listWithX = new List<double>();
+			
 			try
 			{
 				Console.WriteLine("Введите значение a: ");
@@ -20,11 +22,12 @@
 				Console.WriteLine("Введите значение c: ");
 				c = int.Parse(Console.ReadLine());
 			}
-
+			
 			catch (Exception ex)
 			{
 				Console.WriteLine("Введено некорректное значение \n" + ex);
 			}
+
 			d = Discriminant(a, b, c);
 			listWithX = XFinder(a, b, d);
 			foreach (double list in listWithX)
@@ -36,7 +39,7 @@
 		public static int Discriminant(int a, int b, int c)
 		{
 			int d;
-			
+
 			try
 			{
 				d = checked(b * b - 4 * a * c);
@@ -66,23 +69,23 @@
 				}
 				else if (d == 0)
 				{
-					x1 = (-b + Math.Sqrt(d)) / 2 * a; 
+					x1 = (-b + Math.Sqrt(d)) / 2 * a;
 					result.Add(x1);
 				}
 				else
 				{
 					Console.BackgroundColor = ConsoleColor.Yellow;
-					throw new Exception("Вещественных значений не найдено") ;
+					Console.ForegroundColor = ConsoleColor.Black;
+					throw new Exclude("From the distances");
 				}
-
 			}
 			catch (Exception e)
 			{
-				Console.WriteLine(e);
+				Console.WriteLine("Bright lies \n" + e);
 				throw;
 			}
+
 			return result;
 		}
-		
 	}
 }
