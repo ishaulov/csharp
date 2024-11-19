@@ -14,7 +14,7 @@ public class Quadratic
 		var a = Variables.ArgA;
 		var b = Variables.ArgB;
 		var c = Variables.ArgC;
-		
+
 		while (true)
 		{
 			try
@@ -35,7 +35,6 @@ public class Quadratic
 			{
 				Console.WriteLine("Введено некорректное значение \n" + ex);
 			}
-			
 		}
 
 		List<double> listWithX = new List<double>();
@@ -48,7 +47,6 @@ public class Quadratic
 		{
 			Console.WriteLine($"x = {listWithX[0]}");
 		}
-
 	}
 
 	public static int Discriminant(int a, int b, int c)
@@ -73,7 +71,7 @@ public class Quadratic
 		double x1 = 0;
 		double x2 = 0;
 		List<double> result = new List<double>();
-		
+
 		try
 		{
 			if (d > 0)
