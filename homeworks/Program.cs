@@ -21,7 +21,7 @@
 			}
 
 			Stack stack = new Stack(inputValues);
-			// stack.Add("ll");
+			stack.Add("");
 			// stack.Add("xx");
 			// stack.Pop();
 			
