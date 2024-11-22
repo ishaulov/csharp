@@ -3,19 +3,27 @@ namespace homeworks;
 public class Stack
 {
 	private List<string> _stack;
-	public int Size { get; set; }
-	
-	public int Top { get; set; }
+
+	public int Size
+	{
+		get
+		{
+			return _stack.Count;
+		}
+	}
+
+	public string Top
+	{
+		get
+		{
+			return _stack[_stack.Count - 1];
+		}
+	}
 	
 	public Stack(List<string> stack)
 	{
 		_stack = stack;
-		/*foreach (var value in values)
-		{
-			if (value == null)
-				throw new NullReferenceException("NUll value null");
-			_stack.AddLast(value);
-		}*/
+
 	}
 
 	public void Add(string item)
@@ -25,7 +33,7 @@ public class Stack
 		_stack.Add(item);
 	}
 
-	public string Pop()
+	public void Pop()
 	{
 		if (_stack.Count == 0)
 		{
@@ -33,8 +41,7 @@ public class Stack
 		}
 		else
 		{
-			return _stack[_stack.Count - 1];
+			_stack.RemoveAt(_stack.Count - 1);
 		}
-		
 	}
 }
