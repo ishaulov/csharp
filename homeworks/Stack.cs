@@ -1,6 +1,8 @@
+using System.Collections;
+
 namespace homeworks;
 
-public class Stack
+public class Stack : IEnumerable
 {
 	private List<string> _stack;
 
@@ -43,5 +45,10 @@ public class Stack
 		{
 			_stack.RemoveAt(_stack.Count - 1);
 		}
+	}
+
+	public IEnumerator GetEnumerator()
+	{
+		throw new NotImplementedException();
 	}
 }
