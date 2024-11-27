@@ -22,9 +22,9 @@ public class Stack : IEnumerable
 		}
 	}
 	
-	public Stack(List<string> stack)
+	public Stack(params string[] elements)
 	{
-		_stack = stack;
+		_stack = new List<string>(elements);
 
 	}
 

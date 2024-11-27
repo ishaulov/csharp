@@ -22,7 +22,7 @@
 				}
 			}
 
-			Stack stack = new Stack(inputValues);
+			Stack stack = new Stack("a", "b", "c");
 			stack.Add("");
 			// stack.Add("xx");
 			// stack.Pop();
