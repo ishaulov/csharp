@@ -22,7 +22,7 @@ public class Stack
 	public void Add(string item)
 	{
 		if (item == null)
-			throw new NullReferenceException("NUll value null");
+			throw new NullReferenceException("Null value is not allowed.");
 		_stack.Add(item);
 	}
 
@@ -30,7 +30,7 @@ public class Stack
 	{
 		if (_stack.Count == 0)
 		{
-			throw new NullReferenceException("Stack is empty");
+			throw new NullReferenceException("Stack is empty!");
 		}
 		else
 		{
@@ -44,6 +44,7 @@ public class Stack
 		{
 			Console.Write(_stack[i] + " ");
 		}
+
 		Console.WriteLine();
 	}
 }
