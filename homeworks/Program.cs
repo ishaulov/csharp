@@ -5,30 +5,18 @@
 	{
 		public static void Main(string[] args)
 		{
-			
-			// this is test for MT
-			List<string?> inputValues = new List<string?>();
-			while (true)
-			{
-				string input = Console.ReadLine();
-				if (input != "")
-				{
-					inputValues.Add(input);
-				}
-				else
-				{
-					Console.WriteLine("Result:");
-					break;
-				}
-			}
-
 			Stack stack = new Stack("a", "b", "c");
-			stack.Add("");
+			// stack.Add("");
 			// stack.Add("xx");
 			// stack.Pop();
+
+			Stack merge = stack.Merge(new Stack("1", "2", "3"));
+			merge.StackPrint();
 			
 			Console.WriteLine($"Count of stack elements: " + stack.Size);
 			Console.WriteLine($"Last element of stack: " + stack.Top);
+			
+			
 		}
 	}
 }

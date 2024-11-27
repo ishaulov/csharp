@@ -9,7 +9,7 @@ public static class StackExtension
             stack1.Add(stack2.Top);
             stack2.Pop();
         }
-
+        stack1.Add(stack2.Top);
         return stack1;
     }
 }

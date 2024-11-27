@@ -1,31 +1,22 @@
-using System.Collections;
-
 namespace homeworks;
 
-public class Stack : IEnumerable
+public class Stack
 {
 	private List<string> _stack;
 
 	public int Size
 	{
-		get
-		{
-			return _stack.Count;
-		}
+		get { return _stack.Count; }
 	}
 
 	public string Top
 	{
-		get
-		{
-			return _stack[_stack.Count - 1];
-		}
+		get { return _stack[_stack.Count - 1]; }
 	}
-	
+
 	public Stack(params string[] elements)
 	{
 		_stack = new List<string>(elements);
-
 	}
 
 	public void Add(string item)
@@ -47,8 +38,12 @@ public class Stack : IEnumerable
 		}
 	}
 
-	public IEnumerator GetEnumerator()
+	public void StackPrint()
 	{
-		throw new NotImplementedException();
+		for (int i = 0; i < _stack.Count; ++i)
+		{
+			Console.Write(_stack[i] + " ");
+		}
+		Console.WriteLine();
 	}
 }
