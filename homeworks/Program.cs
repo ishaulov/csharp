@@ -5,13 +5,17 @@
 	{
 		public static void Main(string[] args)
 		{
-			Stack stack = new Stack("a", "b", "c");
+			Quadcopter quadcopter = new Quadcopter();
 
-			Stack merge = stack.Merge(new Stack("1", "2", "3"));
-			merge.StackPrint();
+			quadcopter.GetComponents("rotor1", "rotor2", "rotor3");
 
-			Console.WriteLine($"Count of stack elements: " + stack.Size);
-			Console.WriteLine($"Last element of stack: " + stack.Top);
+			quadcopter.PrintComponents();
+
+			Console.WriteLine(quadcopter.GetRobotName());
+			Console.WriteLine(quadcopter.GetRobotType());
+			Console.WriteLine(quadcopter.GetInfo());
+
+			quadcopter.Charge();
 		}
 	}
 }
