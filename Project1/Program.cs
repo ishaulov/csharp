@@ -10,7 +10,8 @@ class Program
 		{
 			Name = "Venus",
 			orderNumberFromTheSun = 2,
-			equatorLength = 38025
+			equatorLength = 38025,
+			previousPlanet = "Empty"
 		};
 
 		var Earth = new
@@ -29,7 +30,19 @@ class Program
 			previousPlanet = Earth
 		};
 
+		var VenusAgain = new
+		{
+			Name = "Venus",
+			orderNumberFromTheSun = 2,
+			equatorLength = 38025,
+			previousPlanet = "Empty"
+		};
+
 		Console.WriteLine(Venus);
 		Console.WriteLine(Earth);
+		Console.WriteLine(Mars);
+		Console.WriteLine(Venus.Equals(VenusAgain));
+		Console.WriteLine(Earth.Equals(VenusAgain));
+		Console.WriteLine(Mars.Equals(VenusAgain));
 	}
 }
