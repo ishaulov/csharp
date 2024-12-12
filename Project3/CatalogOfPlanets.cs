@@ -12,15 +12,20 @@ public class CatalogOfPlanets
 		_planets = ["Venus", "Earth", "Mars"];
 	}
 
-	
-	public (string, int, int) GetPlanet(string planetName)
+	public delegate string PlanetValidator(string planetName);
+
+	public string CountOfCall(string planetName)
 	{
 		_count += 1;
 		if (_count % 3 == 0)
 		{
-			Console.WriteLine("Вы спрашиваете слишком часто");
+			return "Вы спрашиваете слишком часто";
 		}
+	}
 
+	public (string, int, int) GetPlanet(string planetName, PlanetValidator planetValidator)
+	{
+		planetValidator(planetName);
 		switch (planetName)
 		{
 			case "Venus":
