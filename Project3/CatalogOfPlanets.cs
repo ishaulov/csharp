@@ -41,12 +41,22 @@ public class CatalogOfPlanets
 		string validation = planetValidator(planetName);
 		switch (planetName)
 		{
+			case "Mercury":
+				return (1, 4880 , validation);
 			case "Venus":
 				return (2, 38025, validation);
 			case "Earth":
 				return (3, 40075, validation);
 			case "Mars":
 				return (4, 21344, validation);
+			case "Jupiter":
+				return (5, 439264, validation);
+			case "Saturn":
+				return (6, 60268, validation);
+			case "Uranus":
+				return (7, 25559, validation);
+			case "Neptune":
+				return (8, 48682, validation);
 			default:
 				return (0, 0, "Не удалось найти планету");
 		}

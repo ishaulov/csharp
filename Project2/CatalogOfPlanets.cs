@@ -9,7 +9,7 @@ public class CatalogOfPlanets
 
 	public CatalogOfPlanets()
 	{
-		_planets = ["Venus", "Earth", "Mars"];
+		_planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
 	}
 
 	
@@ -23,12 +23,22 @@ public class CatalogOfPlanets
 
 		switch (planetName)
 		{
+			case "Mercury":
+				return (1, 4880 , "Mercury");
 			case "Venus":
-				return (2, 38025,"Venus");
+				return (2, 38025, "Venus");
 			case "Earth":
 				return (3, 40075, "Earth");
 			case "Mars":
 				return (4, 21344, "Mars");
+			case "Jupiter":
+				return (5, 439264, "Jupiter");
+			case "Saturn":
+				return (6, 60268, "Saturn");
+			case "Uranus":
+				return (7, 25559, "Uranus");
+			case "Neptune":
+				return (8, 48682, "Neptune");
 			default:
 				return (0, 0, "Не удалось найти планету");
 		}
