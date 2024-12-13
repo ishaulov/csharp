@@ -13,24 +13,24 @@ public class CatalogOfPlanets
 	}
 
 	
-	public (string, int, int) GetPlanet(string planetName)
+	public (int, int, string) GetPlanet(string planetName)
 	{
 		_count += 1;
 		if (_count % 3 == 0)
 		{
-			Console.WriteLine("Вы спрашиваете слишком часто");
+			return (0, 0, "Вы спрашиваете слишком часто");
 		}
 
 		switch (planetName)
 		{
 			case "Venus":
-				return ("Venus", 2, 38025);
+				return (2, 38025,"Venus");
 			case "Earth":
-				return ("Earth", 3, 40075);
+				return (3, 40075, "Earth");
 			case "Mars":
-				return ("Mars", 4, 21344);
+				return (4, 21344, "Mars");
 			default:
-				return ("Не удалось найти планету", 0, 0);
+				return (0, 0, "Не удалось найти планету");
 		}
 	}
 }

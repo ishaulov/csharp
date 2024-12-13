@@ -13,8 +13,8 @@ public class CatalogOfPlanets
 		_planets = ["Venus", "Earth", "Mars"];
 	}
 
-	public delegate void PlanetValidator(string planetName);
-	public void CountOfCall(string planetName)
+	public delegate string PlanetValidator(string planetName);
+	public string CountOfCall(string planetName)
 	{
 		
 		if (planetName == _currentPlanet)
@@ -24,28 +24,31 @@ public class CatalogOfPlanets
 		else
 		{
 			_currentPlanet = planetName;
-			_count = 0; 
+			_count = 0;
+			
 		}
 		if (_count == 3)
 		{
-			Console.WriteLine("Вы спрашиваете слишком часто");
 			_count = 1; 
+			return "Вы спрашиваете слишком часто";
+			
 		}
+		return null;
 	}
 
-	public (string, int, int) GetPlanet(string planetName, PlanetValidator planetValidator)
+	public (int, int, string) GetPlanet(string planetName, PlanetValidator planetValidator)
 	{
-		planetValidator(planetName);
+		string validation = planetValidator(planetName);
 		switch (planetName)
 		{
 			case "Venus":
-				return ("Venus", 2, 38025);
+				return (2, 38025, validation);
 			case "Earth":
-				return ("Earth", 3, 40075);
+				return (3, 40075, validation);
 			case "Mars":
-				return ("Mars", 4, 21344);
+				return (4, 21344, validation);
 			default:
-				return ("Не удалось найти планету", 0, 0);
+				return (0, 0, "Не удалось найти планету");
 		}
 	}
 }
