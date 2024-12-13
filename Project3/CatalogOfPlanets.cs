@@ -3,23 +3,33 @@ namespace Project3;
 public class CatalogOfPlanets
 {
 	private string[] _planets;
-
-	//public static GetPlanet()
 	private int _count = 0;
+	private string _currentPlanet = String.Empty;
+	//public static GetPlanet()
+	
 
 	public CatalogOfPlanets()
 	{
 		_planets = ["Venus", "Earth", "Mars"];
 	}
 
-	public delegate string PlanetValidator(string planetName);
-
-	public string CountOfCall(string planetName)
+	public delegate void PlanetValidator(string planetName);
+	public void CountOfCall(string planetName)
 	{
-		_count += 1;
-		if (_count % 3 == 0)
+		
+		if (planetName == _currentPlanet)
 		{
-			return "Вы спрашиваете слишком часто";
+			_count += 1;
+		}
+		else
+		{
+			_currentPlanet = planetName;
+			_count = 0; 
+		}
+		if (_count == 3)
+		{
+			Console.WriteLine("Вы спрашиваете слишком часто");
+			_count = 1; 
 		}
 	}
 
