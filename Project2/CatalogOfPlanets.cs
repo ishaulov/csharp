@@ -4,7 +4,6 @@ public class CatalogOfPlanets
 {
 	private string[] _planets;
 
-	//public static GetPlanet()
 	private int _count = 0;
 
 	public CatalogOfPlanets()
@@ -12,7 +11,7 @@ public class CatalogOfPlanets
 		_planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
 	}
 
-	
+
 	public (int, int, string) GetPlanet(string planetName)
 	{
 		_count += 1;
@@ -24,7 +23,7 @@ public class CatalogOfPlanets
 		switch (planetName)
 		{
 			case "Mercury":
-				return (1, 4880 , "Mercury");
+				return (1, 4880, "Mercury");
 			case "Venus":
 				return (2, 38025, "Venus");
 			case "Earth":

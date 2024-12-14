@@ -7,7 +7,8 @@ public class Planet
 	private int _equatorLength = 0;
 	private string _previousPlanet = string.Empty;
 
-	private List<string> _planetsList = new List<string> { "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"};
+	private List<string> _planetsList = new List<string>
+		{ "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune" };
 
 
 	public string Name

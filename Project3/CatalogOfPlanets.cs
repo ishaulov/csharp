@@ -6,7 +6,7 @@ public class CatalogOfPlanets
 	private int _count = 0;
 	private string _currentPlanet = String.Empty;
 	//public static GetPlanet()
-	
+
 
 	public CatalogOfPlanets()
 	{
@@ -14,9 +14,9 @@ public class CatalogOfPlanets
 	}
 
 	public delegate string PlanetValidator(string planetName);
+
 	public string CountOfCall(string planetName)
 	{
-		
 		if (planetName == _currentPlanet)
 		{
 			_count += 1;
@@ -25,24 +25,29 @@ public class CatalogOfPlanets
 		{
 			_currentPlanet = planetName;
 			_count = 0;
-			
 		}
+
 		if (_count == 3)
 		{
-			_count = 0; 
+			_count = 0;
 			return "Вы спрашиваете слишком часто";
-			
 		}
+
 		return null;
 	}
 
 	public (int, int, string) GetPlanet(string planetName, PlanetValidator planetValidator)
 	{
 		string validation = planetValidator(planetName);
+		if (validation == "deny")
+		{
+			return (0, 0, "Это запретная планета");
+		}
+
 		switch (planetName)
 		{
 			case "Mercury":
-				return (1, 4880 , validation);
+				return (1, 4880, validation);
 			case "Venus":
 				return (2, 38025, validation);
 			case "Earth":
