@@ -29,7 +29,7 @@ public class CatalogOfPlanets
 		}
 		if (_count == 3)
 		{
-			_count = 1; 
+			_count = 0; 
 			return "Вы спрашиваете слишком часто";
 			
 		}
